@@ -157,12 +157,16 @@ namespace PonderationTreeTest
 				SearchAndMultiplyAllValues(node.RightNode, ref values, value * node.OneMinusP);
 			}
 		}
-
+		/// <summary>
+		/// As expected, only the trees that have the number of leafs queals to Math.Pow(2,Level), 
+		/// presents balanced proportions for the pnderations (p,1-p) pairs. 
+		/// On run, the system will log on console,the binary tree of ponderations, the  the means of each ponderation, 
+		/// generated randomly by GeneratePonderationTree
+		/// </summary>
+		/// <param name="args"></param>
 		static void Main(string[] args)
 		{
-			Node m = new Node(0);
-			//m = m.GeneratePonderationTree(m, 4);
-			//Console.WriteLine(m.ToString());
+			Node m;
 			for (int i = 3; i < 17; i++)
 			{
 				m = Node.GeneratePonderationTree(i);
